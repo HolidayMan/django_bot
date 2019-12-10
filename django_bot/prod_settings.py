@@ -11,3 +11,5 @@ DATABASES = {
 TOKEN = "<your token>"
 
 SECRET_KEY = '<your SECRET_KEY>' # django SECRET_KEY
+
+DOMAIN = 'my_domain'

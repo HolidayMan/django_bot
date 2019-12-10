@@ -5,7 +5,7 @@ import telebot
 from django.views import View
 from django.http import HttpResponse
 
-from django_bot.settings import BASE_DIR
+from django_bot.settings import BASE_DIR, DOMAIN
 
 from bot.bot import bot
 from bot.bot import *
@@ -30,4 +30,4 @@ class ProcessWebhook(View):
 
 bot.remove_webhook()
 
-bot.set_webhook(url='https://134.249.228.24:8443/webhook/', certificate=open(WEBHOOK_SSL_CERT, 'r'))
+bot.set_webhook(url=f'https://{DOMAIN}/webhook/', certificate=open(WEBHOOK_SSL_CERT, 'r'))
