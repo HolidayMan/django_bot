@@ -24,4 +24,4 @@ It's a template for creating telegram bots based on django using pyTelegramBotAP
 
 7. Start development server
 
-`python manage.py runserver_plus --cert webhook_cert.pem --key webhook_pkey.pem 0.0.0.0:5000`
+`python manage.py runsslserver --certificate webhook_cert.pem --key webhook_pkey.pem 0.0.0.0:5000`
