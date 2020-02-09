@@ -28,6 +28,10 @@ class ProcessWebhook(View):
         return HttpResponse('Hello')
         
 
-bot.remove_webhook()
-
-bot.set_webhook(url=f'https://{DOMAIN}/webhook/', certificate=open(WEBHOOK_SSL_CERT, 'r'))
+if "runsslserver" in sys.argv:
+    bot.remove_webhook()
+    bot.set_webhook(url=f'https://{DOMAIN}/webhook/', certificate=open(WEBHOOK_SSL_CERT, 'r'))
+elif "runserver" in sys.argv:
+    bot.remove_webhook()
+    import threading
+    threading.Thread(target=bot.polling, kwargs={"none_stop": True}).start()
